@@ -67,10 +67,6 @@ const CvDetail: React.FC = () => {
                   <MdContactPhone size={24} className="text-gray-600" />
                   <p className="ml-3">{file.employee.number}</p>
                 </div>
-                {/* <div className="flex items-center font-medium mb-5 w-full">
-                  <RiGroupFill size={24} className="text-gray-600" />
-                  <p className="ml-3">{file.employee.gender}</p>
-                </div> */}
                 <div className="flex items-center font-medium mb-5 w-full">
                   <RiGroupFill size={24} className="text-gray-600" />
                   <p className="ml-3">{file.employee.age}</p>
@@ -84,7 +80,15 @@ const CvDetail: React.FC = () => {
                     size={24}
                     className="text-gray-600"
                   />
-                  <p className="ml-3">{file.employee.personal_introduction}</p>
+                  <div className="ml-3">
+                    <ul className="list-disc list-inside">
+                      {file.employee.personal_introduction
+                        .split(", ")
+                        .map((intro, idx) => (
+                          <li key={idx}>{intro}</li>
+                        ))}
+                    </ul>
+                  </div>
                 </div>
                 <div className="flex items-center font-medium mb-5 w-full">
                   <button

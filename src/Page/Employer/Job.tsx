@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import client from "../../config";
 import Footer from "../../Components/Footter";
 
-const Info = () => {
+const InfoJOb = () => {
   const navigate = useNavigate();
   const [street, setStreet] = useState("");
   const [district, setDistrict] = useState("");
@@ -73,7 +73,7 @@ const Info = () => {
       toast.success("Tạo công việc thành công!");
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/nhatuyendung");
       }, 1000);
     } catch (error) {
       console.error("Error:", error);
@@ -242,13 +242,12 @@ const Info = () => {
                   onChange={(e) => setLevel(e.target.value)}
                 >
                   <option value="">Chọn cấp độ</option>
-                  <option value="IN">IN</option>
-                  <option value="FR">FR</option>
-                  <option value="JR">JR</option>
-                  <option value="MD">MD</option>
-                  <option value="SR">SR</option>
-                  <option value="MG">MG</option>
-                  <option value="advanced">CH</option>
+                  <option value="IN">INTERN</option>
+                  <option value="FR">FRESHER</option>
+                  <option value="JR">JUNIOR</option>
+                  <option value="MD">MIDDLE</option>
+                  <option value="SR">SENIOR</option>
+                  <option value="MG">MANAGER</option>
                 </select>
               </div>
 
@@ -278,4 +277,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default InfoJOb;
